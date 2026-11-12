@@ -4,7 +4,7 @@ import {
   FileText, Medal, Lightbulb, MessageCircle, ArrowRight,
   Calendar, Mail, AlertCircle
 } from 'lucide-react'
-import Logo from '../components/Logo'
+import Logo from '../components/logo'
 
 export default function Inicio() {
   return (

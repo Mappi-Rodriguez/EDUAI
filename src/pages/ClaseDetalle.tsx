@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
+import ReactQuill from 'react-quill-new'
+import 'react-quill-new/dist/quill.snow.css'
 import { clases } from '../data/mockData'
 import { ArrowLeft, Save, FileText, Video, Rocket } from 'lucide-react'
 
@@ -10,7 +10,7 @@ export default function ClaseDetalle() {
   const navigate = useNavigate()
   
   // Buscar la clase real basada en el ID de la URL
-  const claseActual = clases.find(c => c.id === id) || clases[0]
+const claseActual = clases.find(c => String(c.id) === id) || clases[0]
 
   // Datos de ejemplo para los materiales (luego vendrán de tu BD)
   const materialesProfesor = [
