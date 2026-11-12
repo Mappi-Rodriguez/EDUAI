@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
-import { GraduationCap, User, Shield, Eye, EyeOff } from 'lucide-react'
+import { GraduationCap, Eye, EyeOff } from 'lucide-react'
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true)

@@ -20,11 +20,17 @@ interface SidebarProps {
   isDarkMode: boolean
   toggleDarkMode: () => void
 }
+type MenuItem = {
+  name: string
+  icon: any
+  path: string
+  badge?: number
+}
 
 export default function Sidebar({ role, isDarkMode, toggleDarkMode }: SidebarProps) {
   const location = useLocation()
   
-  const menus = {
+  const menus: Record<'student' | 'teacher' | 'admin', MenuItem[]> = {
     student: [
   { name: 'Inicio', icon: Home, path: '/' },
   { name: 'Mis Clases', icon: BookOpen, path: '/clases' },

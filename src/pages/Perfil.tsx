@@ -1,6 +1,6 @@
 // src/pages/Perfil.tsx
 import { useAuth } from '../contexts/AuthContext'
-import { User, Mail, GraduationCap, Shield, BookOpen, Award } from 'lucide-react'
+import { User, Mail, GraduationCap,BookOpen, Award } from 'lucide-react'
 
 export default function Perfil() {
   const { user } = useAuth()

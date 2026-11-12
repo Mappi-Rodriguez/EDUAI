@@ -10,8 +10,7 @@ interface LayoutProps {
   userName: string
   userImage?: string
 }
-
-export default function Layout({ role, setRole, onLogout, children, userName, userImage }: LayoutProps) {
+export default function Layout({ role, onLogout, children, userName, userImage }: LayoutProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 

@@ -1,7 +1,7 @@
 // src/pages/Inicio.tsx
 import { 
-  BookOpen, CheckCircle, Star, Trophy, Clock, Sparkles, 
-  FileText, Medal, Lightbulb, MessageCircle, ArrowRight,
+BookOpen, CheckCircle, Star, Trophy,
+FileText, Medal, Lightbulb, MessageCircle, ArrowRight,
   Calendar, Mail, AlertCircle
 } from 'lucide-react'
 import Logo from '../components/logo'
