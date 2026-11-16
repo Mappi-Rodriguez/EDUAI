@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import Sidebar from './sidebar'
-import { Bell, LogOut, Menu } from 'lucide-react'
+// 👇 AGREGA ESTA LÍNEA PARA LOS ÍCONOS QUE FALTABAN
+import { Menu, LogOut, Bell } from 'lucide-react'
 
 interface LayoutProps {
   role: 'student' | 'teacher' | 'admin'
-  setRole: (role: 'student' | 'teacher' | 'admin') => void
+  setRole?: (role: 'student' | 'teacher' | 'admin') => void // Hice opcional setRole para evitar errores si no se usa
   onLogout: () => void
   children: React.ReactNode
   userName: string
   userImage?: string
 }
+
 export default function Layout({ role, onLogout, children, userName, userImage }: LayoutProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -50,7 +52,7 @@ export default function Layout({ role, onLogout, children, userName, userImage }
           <header className="bg-white dark:bg-eduai-surface shadow-sm px-6 py-4 sticky top-0 z-20">
             <div className="flex items-center justify-between">
               
-              {/* BOTÓN HAMBURGUESA - SIEMPRE VISIBLE */}
+              {/* BOTÓN HAMBURGUESA */}
               <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-eduai-deep transition-colors"
@@ -62,7 +64,7 @@ export default function Layout({ role, onLogout, children, userName, userImage }
               {/* Usuario */}
               <div className="flex items-center gap-3">
                 <img
-                  src={userImage || 'https://ui-avatars.com/api/?name=' + userName + '&background=5278D8&color=fff'}
+                  src={userImage || `https://ui-avatars.com/api/?name=${userName}&background=5278D8&color=fff`}
                   alt={userName}
                   className="w-10 h-10 rounded-full border-2 border-eduai-primary"
                 />

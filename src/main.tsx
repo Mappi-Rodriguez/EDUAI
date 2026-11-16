@@ -1,16 +1,11 @@
+import './i18n'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { AuthProvider } from './contexts/AuthContext'
 import App from './App'
-import './index.css'
+import './index.css' // Asegúrate de que esta línea exista si usas Tailwind
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
 )

@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "inicio": "Home",
+    "mis_clases": "My Classes",
+    "publicaciones": "Publications",
+    "chats": "Chats",
+    "actividades": "Activities",
+    "entregas": "Submissions",
+    "transparencia_ia": "AI Transparency",
+    "calificaciones": "Grades",
+    "recursos": "Resources",
+    "kahoot": "Create Kahoot",
+    "youtube": "YouTube Library",
+    "classroom": "Google Classroom",
+    "perfil": "My Profile",
+    "modo_oscuro": "Dark Mode",
+    "modo_claro": "Light Mode",
+    "frase_docente": "Educating is transforming lives 🌟"
+  }
+}

@@ -1,95 +1,110 @@
-// src/pages/InicioDocente.tsx
-import { Users, FileText, CheckCircle, TrendingUp, Clock, Shield } from 'lucide-react'
+import { 
+  Users, BookOpen, CheckCircle, TrendingUp, 
+  Gamepad2, Video, ExternalLink, ArrowRight 
+} from 'lucide-react'
 
 export default function InicioDocente() {
+  // Datos de tus clases reales
+  const misClases = [
+    { nombre: '7mo Balanced', alumnos: 24, asistencia: '95%', color: 'bg-blue-50 border-blue-200 text-blue-800' },
+    { nombre: '8vo Reflective', alumnos: 28, asistencia: '88%', color: 'bg-purple-50 border-purple-200 text-purple-800' },
+    { nombre: '9th Thinker', alumnos: 30, asistencia: '92%', color: 'bg-green-50 border-green-200 text-green-800' },
+    { nombre: '10th Communicator', alumnos: 26, asistencia: '90%', color: 'bg-orange-50 border-orange-200 text-orange-800' }
+  ]
+
   return (
-    <div className="max-w-7xl mx-auto space-y-6">
-      {/* Banner */}
-      <div className="bg-gradient-to-r from-eduai-deep to-eduai-lavender rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
-        <div className="relative z-10">
-          <h1 className="text-3xl font-bold mb-2">¡Hola, Prof. Daniela! 👋</h1>
-          <p className="text-blue-100 text-lg">Educar también es inspirar ✨</p>
-        </div>
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10"></div>
+    <div className="space-y-8">
+      {/* ENCABEZADO DE BIENVENIDA */}
+      <div>
+        <h1 className="text-3xl font-bold text-eduai-deep mb-2">👋 ¡Hola, Profesora!</h1>
+        <p className="text-gray-500">Aquí tienes un resumen de tus clases y herramientas disponibles hoy.</p>
       </div>
 
-      {/* Estadísticas del Docente */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatCard icon={<Users className="w-6 h-6 text-blue-600" />} value="45" label="Estudiantes activos" bg="bg-blue-100" />
-        <StatCard icon={<FileText className="w-6 h-6 text-orange-600" />} value="12" label="Entregas pendientes" bg="bg-orange-100" />
-        <StatCard icon={<CheckCircle className="w-6 h-6 text-green-600" />} value="8" label="Clases activas" bg="bg-green-100" />
-        <StatCard icon={<TrendingUp className="w-6 h-6 text-purple-600" />} value="96%" label="Promedio general" bg="bg-purple-100" />
+      {/* TARJETAS DE ESTADÍSTICAS RÁPIDAS */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4">
+          <div className="p-3 bg-blue-100 rounded-lg text-blue-600"><Users size={24} /></div>
+          <div><p className="text-2xl font-bold text-gray-800">108</p><p className="text-sm text-gray-500">Estudiantes Totales</p></div>
+        </div>
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4">
+          <div className="p-3 bg-green-100 rounded-lg text-green-600"><CheckCircle size={24} /></div>
+          <div><p className="text-2xl font-bold text-gray-800">91%</p><p className="text-sm text-gray-500">Asistencia Promedio</p></div>
+        </div>
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4">
+          <div className="p-3 bg-purple-100 rounded-lg text-purple-600"><BookOpen size={24} /></div>
+          <div><p className="text-2xl font-bold text-gray-800">4</p><p className="text-sm text-gray-500">Clases Activas</p></div>
+        </div>
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4">
+          <div className="p-3 bg-orange-100 rounded-lg text-orange-600"><TrendingUp size={24} /></div>
+          <div><p className="text-2xl font-bold text-gray-800">12</p><p className="text-sm text-gray-500">Tareas Pendientes</p></div>
+        </div>
       </div>
 
-      {/* Entregas Pendientes y Transparencia IA */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Entregas Pendientes */}
-        <div className="bg-white dark:bg-eduai-surface p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-          <h3 className="font-bold text-xl text-eduai-deep dark:text-white mb-4 flex items-center gap-2">
-            <Clock className="w-5 h-5 text-orange-500" /> Entregas Pendientes
-          </h3>
-          <div className="space-y-3">
-            <EntregaItem estudiante="Mariapaz Rodríguez" tarea="Ensayo Revolución Industrial" clase="Historia" tiempo="Hace 2 horas" />
-            <EntregaItem estudiante="Lupe Martínez" tarea="Ejercicios de Álgebra" clase="Matemáticas" tiempo="Hace 5 horas" />
-            <EntregaItem estudiante="Ashlie Gómez" tarea="Reporte de Laboratorio" clase="Ciencias" tiempo="Hace 1 día" />
-          </div>
-        </div>
-
-        {/* Transparencia IA */}
-        <div className="bg-white dark:bg-eduai-surface p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-          <h3 className="font-bold text-xl text-eduai-deep dark:text-white mb-4 flex items-center gap-2">
-            <Shield className="w-5 h-5 text-eduai-lavender" /> Transparencia IA
-          </h3>
-          <div className="bg-gradient-to-br from-eduai-lavender/10 to-eduai-primary/10 p-5 rounded-lg border-l-4 border-eduai-lavender">
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-              <strong>3 estudiantes</strong> declararon uso de IA en sus últimas entregas.
-            </p>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-gray-700 dark:text-gray-300">Mariapaz: ChatGPT (Investigación)</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-gray-700 dark:text-gray-300">Lupe: Grammarly (Corrección)</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                <span className="text-gray-700 dark:text-gray-300">Ashlie: Sin declarar</span>
+      {/* SECCIÓN: MIS CLASES */}
+      <div>
+        <h2 className="text-xl font-bold text-eduai-deep mb-4 flex items-center gap-2">
+          <BookOpen className="w-5 h-5" /> Mis Clases
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {misClases.map((clase, index) => (
+            <div key={index} className={`p-5 rounded-xl border ${clase.color} hover:shadow-md transition cursor-pointer`}>
+              <h3 className="font-bold text-lg mb-2">{clase.nombre}</h3>
+              <div className="flex justify-between text-sm opacity-80">
+                <span>👥 {clase.alumnos} Alumnos</span>
+                <span>📊 {clase.asistencia} Asist.</span>
               </div>
             </div>
-            <button className="mt-4 text-sm bg-eduai-lavender text-white px-4 py-2 rounded-lg hover:bg-eduai-primary transition-colors">
-              Ver registros completos
-            </button>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
-  )
-}
 
-function StatCard({ icon, value, label, bg }: { icon: React.ReactNode, value: string, label: string, bg: string }) {
-  return (
-    <div className="bg-white dark:bg-eduai-surface p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
-      <div className={`w-12 h-12 ${bg} rounded-lg flex items-center justify-center`}>{icon}</div>
+      {/* SECCIÓN: HERRAMIENTAS DE ENSEÑANZA (KAHOOT, YOUTUBE, CLASSROOM) */}
       <div>
-        <p className="text-2xl font-bold text-eduai-deep dark:text-white">{value}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
-      </div>
-    </div>
-  )
-}
+        <h2 className="text-xl font-bold text-eduai-deep mb-4 flex items-center gap-2">
+          <Gamepad2 className="w-5 h-5" /> Herramientas de Enseñanza
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          {/* Tarjeta Kahoot */}
+          <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition cursor-pointer group relative overflow-hidden">
+            <div className="relative z-10">
+              <Gamepad2 className="w-10 h-10 mb-4 opacity-90" />
+              <h3 className="text-lg font-bold mb-1">Crear Kahoot</h3>
+              <p className="text-sm opacity-90 mb-4">Diseña quizzes interactivos para evaluar.</p>
+              <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                Abrir herramienta <ArrowRight size={16} />
+              </div>
+            </div>
+            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white opacity-10 rounded-full"></div>
+          </div>
 
-function EntregaItem({ estudiante, tarea, clase, tiempo }: { estudiante: string, tarea: string, clase: string, tiempo: string }) {
-  return (
-    <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-eduai-deep/20 rounded-lg hover:bg-gray-100 dark:hover:bg-eduai-deep/40 transition-colors">
-      <div>
-        <p className="font-medium text-sm text-eduai-deep dark:text-white">{estudiante}</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400">{tarea} • {clase}</p>
-      </div>
-      <div className="text-right">
-        <p className="text-xs text-gray-500">{tiempo}</p>
-        <button className="text-xs bg-eduai-primary text-white px-2 py-1 rounded mt-1">Revisar</button>
+          {/* Tarjeta YouTube */}
+          <div className="bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition cursor-pointer group relative overflow-hidden">
+            <div className="relative z-10">
+              <Video className="w-10 h-10 mb-4 opacity-90" />
+              <h3 className="text-lg font-bold mb-1">Biblioteca YouTube</h3>
+              <p className="text-sm opacity-90 mb-4">Busca videos educativos para tus clases.</p>
+              <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                Buscar videos <ArrowRight size={16} />
+              </div>
+            </div>
+            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white opacity-10 rounded-full"></div>
+          </div>
+
+          {/* Tarjeta Classroom */}
+          <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition cursor-pointer group relative overflow-hidden">
+            <div className="relative z-10">
+              <ExternalLink className="w-10 h-10 mb-4 opacity-90" />
+              <h3 className="text-lg font-bold mb-1">Google Classroom</h3>
+              <p className="text-sm opacity-90 mb-4">Sincroniza tareas y calificaciones.</p>
+              <div className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                Conectar aula <ArrowRight size={16} />
+              </div>
+            </div>
+            <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white opacity-10 rounded-full"></div>
+          </div>
+
+        </div>
       </div>
     </div>
   )

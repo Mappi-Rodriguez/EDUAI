@@ -1,12 +1,16 @@
 // src/pages/Inicio.tsx
+import { useAuth } from '../contexts/AuthContext'
+import TarjetaGamificacion from '../components/TarjetaGamificacion'
 import { 
-BookOpen, CheckCircle, Star, Trophy,
-FileText, Medal, Lightbulb, MessageCircle, ArrowRight,
+  BookOpen, CheckCircle, Star, Trophy,
+  FileText, Medal, Lightbulb, MessageCircle, ArrowRight,
   Calendar, Mail, AlertCircle
 } from 'lucide-react'
 import Logo from '../components/logo'
 
 export default function Inicio() {
+  const { user } = useAuth() // ✨ 2. Obtenemos los datos del usuario que inició sesión
+
   return (
     <div className="max-w-7xl mx-auto space-y-6">
       
@@ -15,7 +19,8 @@ export default function Inicio() {
         <div className="relative z-10 flex items-center gap-6">
           <Logo size="large" showText={false} />
           <div>
-            <h1 className="text-3xl font-bold mb-2">¡Hola, Mariapaz! 👋</h1>
+            {/* ✨ 3. Usamos el nombre real del usuario, o 'Estudiante' si algo falla */}
+            <h1 className="text-3xl font-bold mb-2">¡Hola, {user?.nombre || 'Estudiante'}! 👋</h1>
             <p className="text-blue-100 text-lg">Sigue aprendiendo, cada paso cuenta</p>
           </div>
         </div>
@@ -23,7 +28,8 @@ export default function Inicio() {
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10"></div>
         <div className="absolute bottom-0 left-20 w-24 h-24 bg-white/5 rounded-full -mb-10"></div>
       </div>
-
+      {/* 🎮 GAMIFICACIÓN */}
+      <TarjetaGamificacion />
       {/* 2. NUEVO: Resumen del Día */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white dark:bg-eduai-surface p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">

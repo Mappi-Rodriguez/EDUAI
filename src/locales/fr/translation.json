@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "inicio": "Accueil",
+    "mis_clases": "Mes Cours",
+    "publicaciones": "Publications",
+    "chats": "Discussions",
+    "actividades": "Activités",
+    "entregas": "Remises",
+    "transparencia_ia": "Transparence IA",
+    "calificaciones": "Notes",
+    "recursos": "Ressources",
+    "kahoot": "Créer Kahoot",
+    "youtube": "Bibliothèque YouTube",
+    "classroom": "Google Classroom",
+    "perfil": "Mon Profil",
+    "modo_oscuro": "Mode Sombre",
+    "modo_claro": "Mode Clair",
+    "frase_docente": "Éduquer c'est transformer des vies 🌟"
+  }
+}
