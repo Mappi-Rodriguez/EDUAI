@@ -1,6 +1,6 @@
 import { 
   Home, BookOpen, ClipboardList, FolderOpen, Bot, User, Moon, Sun,
-  Shield, MessageCircle, Search, Library, Gamepad2, Video, ExternalLink, Globe, ChevronDown
+  Shield, MessageCircle, Search, Gamepad2, Video, ExternalLink, Globe, ChevronDown
 } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './logo'

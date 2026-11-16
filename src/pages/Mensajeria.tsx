@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Search, Send, Mail, User, MoreVertical, Phone } from 'lucide-react'
+import { Search, Send, Mail, MoreVertical, Phone } from 'lucide-react'
 
 // --- DATOS SIMULADOS DE ALUMNOS (Con correos) ---
 const ALUMNOS_DATA = [

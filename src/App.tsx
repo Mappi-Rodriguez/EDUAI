@@ -28,7 +28,7 @@ function AppContent() {
   else PaginaInicio = <InicioAdmin />
 
   return (
-    <Layout role={user.rol} userName={`${user.nombre} ${user.apellido}`}>
+    <Layout role={user.rol} userName={`${user.nombre} ${user.apellido}`}onLogout={logout}>
       <Routes>
         <Route path="/" element={PaginaInicio} />
         
